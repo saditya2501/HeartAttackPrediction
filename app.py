@@ -19,6 +19,7 @@ if( __name__ == '__main__'):
     # -*- coding: utf-8 -*-
 
 import numpy as np
+import os
 import pickle
 from flask import Flask, request, render_template
 
@@ -56,4 +57,5 @@ def predict():
 
 if __name__ == '__main__':
 #Run the application
+    port = os.environ.get("PORT",5000)
     app.run(debug = False,host = "0.0.0.0",port=port )
